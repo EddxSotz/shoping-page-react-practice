@@ -1,11 +1,15 @@
+import {ShopCartContext} from '../store/ShopCartContext.jsx';
+import { useContext } from 'react';
+
 export default function Product({
   id,
   image,
   title,
   price,
-  description,
-  onAddToCart,
+  description
 }) {
+  const { addItem } = useContext(ShopCartContext);
+
   return (
     <article className="product">
       <img src={image} alt={title} />
@@ -16,7 +20,7 @@ export default function Product({
           <p>{description}</p>
         </div>
         <p className='product-actions'>
-          <button onClick={() => onAddToCart(id)}>Add to Cart</button>
+          <button onClick={() => addItem(id)}>Add to Cart</button>
         </p>
       </div>
     </article>
