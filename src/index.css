@@ -127,7 +127,7 @@ h1 {
 }
 
 #modal {
-  width: 30%;
+  width: 50%;
   background: #d3b17b;
   border: none;
   border-radius: 6px;
@@ -155,7 +155,7 @@ h1 {
   gap: 0.5rem;
 }
 
-#cart-items li {
+#cart-items-li {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -163,6 +163,9 @@ h1 {
   background: #fbd392;
   border-radius: 5px;
   font-size: 0.9rem;
+}
+#cart-items-img {
+  width: 200px;
 }
 
 .cart-item-actions {
