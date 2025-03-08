@@ -17,7 +17,7 @@ useEffect(()=>{
       <div id="modal-content">
         <h2>Your Cart</h2>
         {children}              
-        <button onClick={onClose}>Close</button>
+        <button onClick={onClose} id="modal-close">Close</button>
       </div>         
     </dialog>    
   );

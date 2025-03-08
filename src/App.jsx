@@ -15,7 +15,8 @@ function App() {
 
     setCartItems((prevCartItems) => {
       return [...prevCartItems, updatedProduct];
-    });    
+    });
+    setIsCartOpen(true);   
   }
 
   const handleOpenCartClick = () => {
@@ -31,8 +32,8 @@ function App() {
   const handleUpdateItemQuantity = (item, newQuantity) => {
     setCartItems((prevCartItems) => {
       return prevCartItems.map((cartItem) => {
-        if (cartItem.id === item.id && cartItem.quantity >= 1) {
-          return { ...cartItem, quantity: cartItem.quantity + newQuantity};
+        if (cartItem.id === item.id) {
+          return { ...cartItem, quantity: newQuantity };
         } else {
           return cartItem;
         }

@@ -146,105 +146,75 @@ h1 {
   margin: 0;
 }
 
-#cart-items {
-  list-style: none;
+#modal-content {
+  padding: 1rem;
+}
+#modal-close {
+  background: transparent;
+  border: none;
+  color: #4f3807;
+  font-size: 1.5rem;
+  cursor: pointer;
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+}
+#modal-close:hover {
+  color: #5f4e33;
+}
+
+#cart {
+  padding: 0;
+}
+
+#cart-items {  
   margin: 1rem 0;
   padding: 0;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  width: 100%;
+  background: #fbd392;
+  border-radius: 5px;
+  list-style: none;
 }
 
 #cart-items-li {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.5rem 1rem;
-  background: #fbd392;
-  border-radius: 5px;
+  flex-flow: row wrap;
+  align-items: top;
+  padding: 0.5rem 1rem;  
   font-size: 0.9rem;
+  gap: 2rem;
 }
+
 #cart-items-img {
   width: 200px;
 }
 
-.cart-item-actions {
-  font-size: 1rem;
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
+.text-formatting {
+  font-size: 1.5rem;
+  color: #4f3807;
 }
 
-.cart-item-actions button {
-  background: transparent;
-  border: none;
+.text-formatting p {
+  font-size: 1.25rem;
+}
+
+.cart-buttons {  
+  padding: 0 1rem;
+  margin-inline: 0.5rem;
+  background:#d1b68b;  
   border-radius: 5px;
   color: #201e1a;
-  cursor: pointer;
+  cursor: pointer;  
+  font-weight: bold;
   font-size: 1.1rem;
+  color: #4f3807;
 }
 
-.cart-item-actions button:hover {
+.cart-buttons:hover {
   background: #f5b744;
-}
-
-.cart-item-actions button:first-of-type {
-  padding-bottom: 0.2rem;
-}
-
-#cart-total-price {
-  text-align: right;
-}
-
-#modal form {
-  display: flex;
-  gap: 1rem;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-#modal form button {
-  background: transparent;
-  border: none;
-  border-radius: 5px;
-  color: #201e1a;
-  cursor: pointer;
-  font-size: 1.1rem;
-}
-
-#modal form button:hover {
-  color: #453719;
-}
-
-#modal form button:last-of-type {
-  background: #271e07;
-  border: none;
-  border-radius: 5px;
-  padding: 0.5rem 1rem;
-  color: #f9efda;
-  font-size: 1rem;
-  cursor: pointer;
-}
-
-#modal form button:last-of-type:hover {
-  background: #382e1b;
-}
-
-#checkout {
-  animation: fade-slide-in-from-right 0.3s ease-in-out;
-}
-
-#checkout label {
-  display: block;
-  margin-bottom: 0.5rem;
-}
-
-#checkout input {
-  width: 100%;
-  padding: 0.5rem;
-  border-radius: 5px;
-  border: none;
-  margin-bottom: 1rem;
 }
 
 @keyframes fade-slide-in-from-top {
