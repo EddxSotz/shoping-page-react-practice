@@ -1,4 +1,4 @@
-import {useContext, useState} from 'react';
+import {useContext} from 'react';
 import {ShopCartContext} from '../store/ShopCartContext.jsx';
 
 export default function CartContent({removeItem, updateItemQuantity}) {
@@ -21,28 +21,34 @@ export default function CartContent({removeItem, updateItemQuantity}) {
   }
 
   return (
-    <div id="cart">
-      <ul>
+    <>
+      <ul id="cart">
         {cartItems.map((item, index) => {
           return (
             <div id="cart-items" key={index}>          
-            <li key={index} id="cart-items-li">
-              <div>
-                <img src={item.image} alt={item.name} id="cart-items-img"/>
-                <h3>{item.title}</h3>
-                <p>{item.price}</p>                
-                  <p>Quantity: {item.quantity}</p>                
-                <div>
-                  <button onClick={() => removeItem(item)}>Remove</button>
-                  <button  onClick={ ()=> handleQuantityIncrease(item)}>+</button>
-                  <button onClick={ ()=> handleQuantityDecrease(item)}>-</button>
-                </div>            
-              </div>
-            </li>
+              <li key={index} >
+                <div id="cart-items-li">
+                  <img src={item.image} alt={item.name} id="cart-items-img"/>
+                  <div className="text-formatting">
+                    <h3>{item.title}</h3>
+                    <p>{item.price}</p>                
+                    <p>Quantity: 
+                      <span>
+                      <button onClick={ ()=> handleQuantityIncrease(item)} className='cart-buttons'>+</button>
+                      </span>
+                      {item.quantity}
+                      <span>
+                        <button onClick={ ()=> handleQuantityDecrease(item)}className='cart-buttons'>-</button>
+                      </span>
+                    </p>                    
+                    <button onClick={() => removeItem(item)} className='cart-buttons'>Remove</button>                    
+                  </div>                                                
+                </div>                
+              </li>
             </div>           
           );
         })}
       </ul>      
-    </div>
+    </>
   );
 }
